@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-navbar/>
+    <b-container fluid>
+      <b-row>
+        <b-col cols="2">
+          <app-sidebar/>
+        </b-col>
+        <b-col cols="10">
+          <p>
+            These are your tasks for <display-current-day/>
+          </p>
+          <display-time-table/>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DisplayCurrentDay from './components/DisplayCurrentDay.vue'
+import DisplayTimeTable from './components/DisplayTimeTable.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'time-slots',
+  components: { DisplayCurrentDay, DisplayTimeTable }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
